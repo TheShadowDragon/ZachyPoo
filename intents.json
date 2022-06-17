@@ -1,0 +1,8 @@
+{"intents": [
+        {"tag": "OutlineIntent",
+         "patterns": ["This is where you put the pattern. What users might type"],
+         "responses": ["Pool of responses the bot can use for its reply"],
+         "context_set": ""
+        }
+   ]
+}
