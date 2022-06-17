@@ -12,13 +12,11 @@ from nltk.stem.lancaster import LancasterStemmer
 nltk.download('punkt')
 
 client = discord.Client()
-client = commands.Bot(command_prefix = '#')
-
-Reply = None;
+client = commands.Bot(command_prefix = '.')
 
 @client.event
 async def onready():
-  print("online!")
+  print("ZachyPoo is here :)")
   
 stemmer = LancasterStemmer()
   
@@ -106,7 +104,7 @@ def bag_of_words(s, words):
 
   
 @client.command()
-async def chat(ctx, *, args):
+async def c(ctx, *, args):
   results = model.predict([bag_of_words(args, words)])[0]
   results_index = np.argmax(results)
   tag = labels[results_index]
@@ -115,4 +113,6 @@ async def chat(ctx, *, args):
       responses = tg['responses']
       
   await ctx.send(random.choice(responses))
+          
+
 client.run(os.getenv("SECRET")) 
